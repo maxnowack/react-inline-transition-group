@@ -1,18 +1,10 @@
 {
-  "name": "react-inline-transition-group",
+  "name": "demo-react-inline-transition-group",
   "author": "Felipe Thomé",
-  "description": "Control inline styles transition for components built with React.",
+  "description": "Demo - Control inline styles transition for components built with React.",
   "license": "BSD-3-Clause",
   "repository": "https://github.com/felipethome/react-inline-transition-group",
   "homepage": "http://felipethome.github.io/react-inline-transition-group",
-  "keywords": [
-    "react",
-    "react-component",
-    "react-transition-group",
-    "inline-styles",
-    "transition",
-    "transition-group"
-  ],
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -32,6 +24,7 @@
     "react": "^15.0.2",
     "react-addons-transition-group": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-inline-transition-group": "^0.1.2",
     "vinyl-source-stream": "~1.1.0",
     "watchify": "~3.6.0"
   },

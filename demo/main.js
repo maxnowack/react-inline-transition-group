@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Transition = require('../src');
+var Transition = require('react-inline-transition-group');
 
 var Demo = React.createClass({
   displayName: 'Demo',
