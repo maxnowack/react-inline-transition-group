@@ -38,7 +38,8 @@
   "scripts": {
     "lint": "eslint src/*",
     "build": "babel ./src --out-dir ./lib",
-    "demo": "gulp demo"
+    "demo": "gulp demo",
+    "demo-deploy": "gulp demo-deploy"
   },
   "version": "0.1.0"
 }

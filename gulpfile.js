@@ -87,6 +87,8 @@ var browserifyDepsTask = function (options) {
 
 gulp.task('demo-deploy', function () {
 
+  process.env.NODE_ENV = 'production';
+
   var browserifyDepsOpt = {
     development: false,
     src: files.dependencies,
@@ -95,7 +97,7 @@ gulp.task('demo-deploy', function () {
   };
 
   var browserifyOpt = {
-    development: true,
+    development: false,
     src: files.browserify,
     output: 'bundle.js',
     dest: './demo/build/scripts',
@@ -109,6 +111,8 @@ gulp.task('demo-deploy', function () {
 });
 
 gulp.task('demo', function() {
+
+  process.env.NODE_ENV = 'production';
 
   var browserifyDepsOpt = {
     development: true,
