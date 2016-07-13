@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 var browserify = require('browserify');
 var connect = require('gulp-connect');
 var merge = require('merge-stream');
@@ -15,6 +17,7 @@ var files = {
     'react',
     'react-dom',
     'react-addons-transition-group',
+    'react-addons-css-transition-group',
   ],
 
   browserify: [
