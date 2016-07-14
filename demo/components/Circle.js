@@ -1,5 +1,5 @@
 const React = require('react');
-const Transition = require('../../src/Transition');
+const Transition = require('react-inline-transition-group');
 const CSSTransition = require('react-addons-css-transition-group');
 
 const Circle = React.createClass({
@@ -139,6 +139,7 @@ const Circle = React.createClass({
           childrenAppearStyle={styles.appear}
           childrenEnterStyle={styles.appear}
           childrenLeaveStyle={styles.leave}
+          propertyName="opacity"
         >
           {circles}
         </Transition>

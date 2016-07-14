@@ -1,6 +1,6 @@
 const React = require('react');
 const Button = require('./Button');
-const Transition = require('../../src/Transition');
+const Transition = require('react-inline-transition-group');
 
 const List = React.createClass({
   displayName: 'List',

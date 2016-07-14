@@ -1,6 +1,6 @@
 const React = require('react');
 const Button = require('./Button');
-const Transition = require('../../src/Transition');
+const Transition = require('react-inline-transition-group');
 const CSSTransition = require('react-addons-css-transition-group');
 
 const Album = React.createClass({
