@@ -1,6 +1,6 @@
 # React Inline Transition Group
 
-Demonstration site.
+Demonstration website.
 
 ## LICENSE
 
