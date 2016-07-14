@@ -56,7 +56,7 @@ const Navbar = React.createClass({
             React Inline Transition Group
           </div>
           <div style={styles.bannerDescription}>
-            Control CSS transitions defined using inline style.
+            Control CSS transitions defined with inline style.
           </div>
         </div>
         <div style={styles.menu}>

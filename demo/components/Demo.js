@@ -22,10 +22,10 @@ const Demo = React.createClass({
         page = (<Circle />);
         break;
       case 'Demo 2':
-        page = (<Album images={['img/1.jpg', 'img/2.jpg']} />);
+        page = (<List />);
         break;
       case 'Demo 3':
-        page = (<List />);
+        page = (<Album images={['img/1.jpg', 'img/2.jpg']} />);
         break;
       case 'Github':
         document.location.href =
