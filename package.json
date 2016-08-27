@@ -28,7 +28,7 @@
     "react-addons-css-transition-group": "^15.2.1",
     "react-addons-transition-group": "^15.2.1",
     "react-dom": "^15.2.1",
-    "react-inline-transition-group": "^1.0.3",
+    "react-inline-transition-group": "^1.0.4",
     "vinyl-source-stream": "~1.1.0",
     "watchify": "~3.6.0"
   },
