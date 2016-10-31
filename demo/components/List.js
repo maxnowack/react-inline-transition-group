@@ -1,8 +1,8 @@
-const React = require('react');
-const Button = require('./Button');
-const Transition = require('react-inline-transition-group');
+var React = require('react');
+var Button = require('./Button');
+var Transition = require('react-inline-transition-group');
 
-const List = React.createClass({
+var List = React.createClass({
   displayName: 'List',
 
   getInitialState: function () {
@@ -22,6 +22,34 @@ const List = React.createClass({
     this.setState(function (previousState) {
       return {count: Math.max(previousState.count - 1, 0)};
     });
+  },
+
+  _handlePhaseStart: function (phase, id) {
+    switch (phase) {
+      case 'appear':
+        this._handleStartAppear(id);
+        break;
+      case 'enter':
+        this._handleStartEnter(id);
+        break;
+      case 'leave':
+        this._handleStartLeave(id);
+        break;
+    }
+  },
+
+  _handlePhaseEnd: function (phase, id) {
+    switch (phase) {
+      case 'appear':
+        this._handleAppeared(id);
+        break;
+      case 'enter':
+        this._handleEntered(id);
+        break;
+      case 'leave':
+        this._handleLeft(id);
+        break;
+    }
   },
 
   _handleStartAppear: function (id) {
@@ -49,7 +77,7 @@ const List = React.createClass({
   },
 
   render: function () {
-    const styles = {
+    var styles = {
       container: {
         background: '#FFF',
         boxShadow: '0 4px 5px 0 rgba(0, 0, 0, 0.14),' +
@@ -94,9 +122,9 @@ const List = React.createClass({
       },
     };
 
-    const elems = [];
+    var elems = [];
 
-    for (let i = 0; i < this.state.count; i++) {
+    for (var i = 0; i < this.state.count; i++) {
       elems.push(
         <div key={i} id={i}>{'id: ' + i}</div>
       );
@@ -117,24 +145,21 @@ const List = React.createClass({
           />
         </div>
         <div style={styles.callback}>
-         {'Callback: ' + this.state.callbackMsg}
+          {'Callback: ' + this.state.callbackMsg}
         </div>
         <Transition
-          childrenBaseStyle={styles.base}
-          childrenAppearStyle={styles.appear}
-          childrenEnterStyle={styles.appear}
-          childrenLeaveStyle={styles.leave}
-          onChildAppeared={this._handleAppeared}
-          onChildEntered={this._handleEntered}
-          onChildLeft={this._handleLeft}
-          onChildStartAppear={this._handleStartAppear}
-          onChildStartEnter={this._handleStartEnter}
-          onChildStartLeave={this._handleStartLeave}
+          childrenStyles={{
+            base: styles.base,
+            appear: styles.appear,
+            enter: styles.appear,
+            leave: styles.leave,
+          }}
+          onPhaseEnd={this._handlePhaseEnd}
+          onPhaseStart={this._handlePhaseStart}
         >
-         {elems}
+          {elems}
         </Transition>
       </div>
-
     );
   },
 

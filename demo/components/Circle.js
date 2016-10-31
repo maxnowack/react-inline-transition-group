@@ -1,8 +1,8 @@
-const React = require('react');
-const Transition = require('react-inline-transition-group');
-const CSSTransition = require('react-addons-css-transition-group');
+var React = require('react');
+var Transition = require('react-inline-transition-group');
+var CSSTransition = require('react-addons-css-transition-group');
 
-const Circle = React.createClass({
+var Circle = React.createClass({
   displayName: 'Circle',
 
   propTypes: {
@@ -44,7 +44,7 @@ const Circle = React.createClass({
   },
 
   render: function () {
-    const styles = {
+    var styles = {
       container: {
         position: 'relative',
         background: '#000',
@@ -97,7 +97,7 @@ const Circle = React.createClass({
       },
     };
 
-    let circleStyle;
+    var circleStyle;
     if (this.state.component === 'react-addons') {
       circleStyle = {
         top: (this.state.top - 50) + 'px',
@@ -105,18 +105,17 @@ const Circle = React.createClass({
       };
     }
 
-    const circles = [];
+    var circles = [];
     circles.pop();
     circles.push(
       <div
         key={this.count++}
         style={circleStyle}
         className={this.state.component === 'react-addons' ? 'circle' : ''}
-      >
-      </div>
+      />
     );
 
-    let transitionComponent;
+    var transitionComponent;
     if (this.state.component === 'react-addons') {
       transitionComponent = (
         <CSSTransition
@@ -134,12 +133,12 @@ const Circle = React.createClass({
     else {
       transitionComponent = (
         <Transition
-          component="div"
-          childrenBaseStyle={styles.circle}
-          childrenAppearStyle={styles.appear}
-          childrenEnterStyle={styles.appear}
-          childrenLeaveStyle={styles.leave}
-          propertyName="opacity"
+          childrenStyles={{
+            base: styles.circle,
+            appear: styles.appear,
+            enter: styles.appear,
+            leave: styles.leave,
+          }}
         >
           {circles}
         </Transition>
